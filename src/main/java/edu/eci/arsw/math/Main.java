@@ -13,10 +13,19 @@ import java.util.Arrays;
  */
 public class Main {
 
-    public static void main(String a[]) {
+    /*public static void main(String a[]) {
         System.out.println(bytesToHex(PiDigits.getDigits(0, 10)));
         System.out.println(bytesToHex(PiDigits.getDigits(1, 100)));
         System.out.println(bytesToHex(PiDigits.getDigits(1, 1000000)));
+    }*/
+
+    public static void main (String a[]){
+        PiThread piThread = new PiThread(0,10);
+        PiThread piThread1 = new PiThread(0,100);
+        PiThread piThread2 = new PiThread(0,1000000);
+        piThread.start();
+        piThread1.start();
+        piThread2.start();
     }
 
     private final static char[] hexArray = "0123456789ABCDEF".toCharArray();
